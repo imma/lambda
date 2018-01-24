@@ -4,7 +4,19 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  if [[ "$($shome/script/version | jq -r '.lambda')" != "$LAMBDA_VERSION" ]]; then
+  if [[ "$($shome/script/version | jq -r '.chalice')" != "$CHALICE_VERSION" ]]; then
+    return 1
+  fi
+
+  if [[ "$($shome/script/version | jq -r '.sam')" != "$SAM_VERSION" ]]; then
+    return 1
+  fi
+
+  if [[ "$($shome/script/version | jq -r '.httpie')" != "$HTTPIE_VERSION" ]]; then
+    return 1
+  fi
+
+  if [[ "$($shome/script/version | jq -r '.http_prompt')" != "$HTTP_PROMPT_VERSION" ]]; then
     return 1
   fi
 

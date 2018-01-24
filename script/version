@@ -4,8 +4,12 @@ function version {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  local ver_lambda="0.0.1"
-  jq -n --arg lambda "$ver_lambda" '{lambda: $lambda}'
+  local ver_chalice="$(chalice --version 2>/dev/null | awk '{print $2}' || true)"
+  local ver_httpie="$(http --version 2>/dev/null || true)"
+  local ver_http_prompt="$(http-prompt --version 2>/dev/null || true)"
+  local ver_sam="$(sam --version 2>/dev/null | awk '{print $3}' || true)"
+  jq -n --arg chalice "$ver_chalice" --arg httpie "$ver_httpie" --arg http_prompt "$ver_http_prompt" --arg sam "$ver_sam" \
+    '{chalice: $chalice, httpie: $httpie, http_prompt: $http_prompt, sam: $sam}'
 }
 
 version "$@"

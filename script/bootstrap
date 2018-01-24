@@ -4,7 +4,13 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  uname -a
+  cd "$shome"
+
+  block compile pipenv
+  block compile yarn
+  mkdir -p "$shome/bin"
+  ln -nfs $(pipenv run which chalice http http-prompt) "$shome/bin/"
+  ln -nfs ../node_modules/aws-sam-local/node_modules/.bin/sam "$shome/bin/"
 }
 
 main "$@"
