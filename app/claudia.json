@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "defn-executor",
+    "name": "defn",
+    "region": "us-east-1"
+  }
+}
