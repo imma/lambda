@@ -8,8 +8,9 @@ function version {
   local ver_httpie="$(http --version 2>/dev/null || true)"
   local ver_http_prompt="$(http-prompt --version 2>/dev/null || true)"
   local ver_sam="$(sam --version 2>/dev/null | awk '{print $3}' || true)"
-  jq -n --arg chalice "$ver_chalice" --arg httpie "$ver_httpie" --arg http_prompt "$ver_http_prompt" --arg sam "$ver_sam" \
-    '{chalice: $chalice, httpie: $httpie, http_prompt: $http_prompt, sam: $sam}'
+  local ver_claudia="$(claudia --version 2>/dev/null || true)"
+  jq -n --arg chalice "$ver_chalice" --arg httpie "$ver_httpie" --arg http_prompt "$ver_http_prompt" --arg sam "$ver_sam" --arg claudia "$ver_claudia" \
+    '{httpie: $httpie, http_prompt: $http_prompt, claudia: $claudia}'
 }
 
 version "$@"

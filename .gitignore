@@ -1,7 +1,5 @@
 /vendor
-/bin/chalice
-/bin/http
-/bin/http-prompt
+/bin
 Pipfile.lock
 node_modules
 yarn.lock

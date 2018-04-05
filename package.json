@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "aws-sam-local": "^0.2.8",
-    "claudia": "^3.4.1"
+    "aws-sam-local": "^0.2.6",
+    "claudia": "^3.4.1",
+    "express": "^4.16.3"
   }
 }
