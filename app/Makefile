@@ -1,3 +1,6 @@
+test:
+	claudia test-lambda
+
 update:
 	claudia update
 
