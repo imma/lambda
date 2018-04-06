@@ -1,7 +1,7 @@
 {
   "lambda": {
     "role": "arn:aws:iam::545070380609:role/adm0-executor",
-    "name": "defn1",
+    "name": "defn0",
     "region": "us-east-1"
   }
 }
