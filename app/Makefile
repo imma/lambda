@@ -1,11 +1,8 @@
 test:
 	claudia test-lambda
 
-update:
+deploy:
 	claudia update
 
-generate:
-	claudia generate-serverless-express-proxy --express-module app
-
-create:
+start:
 	claudia create --region us-east-1 --handler app.app

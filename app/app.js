@@ -1,8 +1,5 @@
-'use strict'
-
-const express = require('express')
-const app = express()
-
-app.get('/', (req, res) => res.send('Hello world!'))
-
-module.exports.app = app
+exports.app = function (event, context) {
+  'use strict';
+  console.log(event);
+  context.succeed('hello world');
+};
