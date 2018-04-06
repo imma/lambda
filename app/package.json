@@ -3,13 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "files": [
-    "app.js"
+    "app.js",
+    "app.sh"
   ],
-  "scripts": {
-    "start": "claudia create --name defn --region us-east-1 --handler app.app",
-    "test": "claudia test-lambda",
-    "deploy": "claudia update"
-  },
   "devDependencies": {
     "claudia": "^3"
   }
