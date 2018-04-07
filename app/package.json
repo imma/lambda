@@ -4,9 +4,14 @@
   "private": true,
   "files": [
     "app.js",
-    "app.sh"
+    "app.sh",
+    "yarn.lock"
+
   ],
   "devDependencies": {
     "claudia": "^3"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }
