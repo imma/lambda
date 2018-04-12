@@ -9,8 +9,8 @@ function main {
   block compile pipenv
   block compile yarn
   mkdir -p "$shome/bin"
-  ln -nfs $(pipenv run which chalice http http-prompt) "$shome/bin/"
-  ln -nfs $(yarn exec -s which claudia) "$shome/bin/"
+  ln -nfs $(pipenv run which http http-prompt) "$shome/bin/"
+  ln -nfs $(yarn exec -s which lambci) "$shome/bin/"
 }
 
 main "$@"
