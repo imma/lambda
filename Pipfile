@@ -1,16 +1,11 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = false
 name = "pypi"
 
-
 [packages]
-
-chalice = "*"
 httpie = "*"
 http-prompt = "*"
-
+aws-sam-cli = "*"
 
 [dev-packages]
-

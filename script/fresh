@@ -12,6 +12,10 @@ function main {
     return 1
   fi
 
+  if [[ "$($shome/script/version | jq -r '.sam')" != "$SAM_VERSION" ]]; then
+    return 1
+  fi
+
   if ! type -P lambci >/dev/null; then
     return 1
   fi
