@@ -6,8 +6,9 @@ function version {
 
   local ver_httpie="$(http --version 2>/dev/null || true)"
   local ver_http_prompt="$(http-prompt --version 2>/dev/null || true)"
-  jq -n --arg httpie "$ver_httpie" --arg http_prompt "$ver_http_prompt" \
-    '{httpie: $httpie, http_prompt: $http_prompt}'
+  local ver_lambci="$(lambci --version 2>/dev/null || true)"
+  jq -n --arg httpie "$ver_httpie" --arg http_prompt "$ver_http_prompt" --arg lambci "$ver_lambci" \
+    '{httpie: $httpie, http_prompt: $http_prompt, lambci: $lambci}'
 }
 
 version "$@"
