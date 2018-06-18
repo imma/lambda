@@ -6,6 +6,5 @@ name = "pypi"
 [packages]
 httpie = "*"
 http-prompt = "*"
-aws-sam-cli = "*"
 
 [dev-packages]

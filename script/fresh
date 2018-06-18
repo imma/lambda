@@ -16,10 +16,6 @@ function check {
     echo 1
   fi &
 
-  if [[ "$($shome/script/version | jq -r '.sam')" != "$SAM_VERSION" ]]; then
-    echo 1
-  fi &
-
   if ! type -P lambci >/dev/null; then
     echo 1
   fi &
