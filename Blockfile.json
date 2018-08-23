@@ -1,6 +1,7 @@
 {
   "require": [
-    "apex"
+    "apex",
+    "sam"
   ],
   "versions": {}
 }
